@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">+Postos</string>
+    <!-- Strings das telas -->
+    <string name="gasolina">Gasolina</string>
+    <string name="gasolina_aditivada">Gasolina Aditivada</string>
+    <string name="gas">Gas</string>
+    <string name="aditivada">Aditivada</string>
+    <string name="alcool">Alcool</string>
+    <string name="alcool_aditivado">Álcool Aditivado</string>
+    <string name="alc">Alc</string>
+    <string name="aditivado">Aditivado</string>
+    <string name="diesel">Diesel</string>
+    <string name="diesel_s10">Diesel s10</string>
+    <string name="s10">S10</string>
+    <string name="qual_combustivel_voce_usa">Qual combustível você usa?</string>
+    <string name="ultima_atualizacao">Ultima atualização em: </string>
+    <string name="rs">R$</string>
+    <!-- Botões -->
+    <string name="comecar">Começar</string>
+    <string name="salvar">Salvar</string>
+    <string name="search">Procurar um posto</string>
+    <string name="entrar">Entrar</string>
+    <string name="criar_conta">Criar Conta</string>
+    <!-- Strings FAB -->
+    <string name="novo_posto">Novo Posto</string>
+    <string name="trocar_combustivel">Trocar Combustível</string>
+    <string name="deletar">Deletar</string>
+    <string name="editar">Editar</string>
+    <string name="atribuir_nota">Atribuir Nota</string>
+    <string name="atualizar_precos">Atualizar Preços</string>
+    <!-- Cadastro de novo posto -->
+    <string name="nome">Nome</string>
+    <string name="bandeira">Bandeira</string>
+    <string name="atendimento">Atendimento</string>
+    <!-- Login -->
+    <string name="cadastre_se">Cadastre-se no +Postos</string>
+    <string name="seu_email">Seu Email</string>
+    <string name="crie_uma_senha">Crie uma senha</string>
+    <string name="ja_possui">Ja possui uma conta?</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="senha">Senha</string>
+    <!-- Menu configurações -->
+    <string name="conf">Configurações</string>
+    <string name="help">Ajuda e FeedBack</string>
+    <string name="sair">Sair</string>
+    <!-- Alert Dialogs -->
+    <string name="atualizacao_precos">Atualização de Preços</string>
+    <string name="nota_atendimento">Nota do Atendimento</string>
+    <string name="editar_posto">Editar Posto</string>
+</resources>
