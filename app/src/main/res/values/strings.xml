@@ -48,4 +48,5 @@
     <string name="atualizacao_precos">Atualização de Preços</string>
     <string name="nota_atendimento">Nota do Atendimento</string>
     <string name="editar_posto">Editar Posto</string>
+    <string name="title_activity_mapa">Map</string>
 </resources>
