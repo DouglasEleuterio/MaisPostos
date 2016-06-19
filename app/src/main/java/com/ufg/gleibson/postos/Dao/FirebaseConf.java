@@ -18,10 +18,9 @@ public class FirebaseConf {
     /**
      * Método para envio de objetos json ao banco do FireBase
      * @param msg
-     * @param valor
      */
-    public void enviar(String msg, Object valor){
-        fb.child(msg).setValue(valor);
+    public void enviar(String msg){
+        fb.setValue(msg);
     }
 
     /**
@@ -47,6 +46,7 @@ public class FirebaseConf {
      * @param senha
      */
     public void criarUsuario(String email, String senha){
+        fb.createUserWithEmailAndPassword();
         fb.createUser(email, senha, new Firebase.ValueResultHandler<Map<String, Object>>(){
            @Override
             public void onSuccess(Map<String, Object> result) {

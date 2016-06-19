@@ -8,7 +8,7 @@ import java.util.*;
 public class Posto {
     private String nome;
     private String bandeira;
-    private List<Combustivel> combustivel;
+    private List<Combustivel> combustiveis;
     private int nota;
 
     public Posto(String nome, String bandeira) {
@@ -33,11 +33,11 @@ public class Posto {
     }
 
     public List<Combustivel> getCombustivel() {
-        return combustivel;
+        return combustiveis;
     }
 
-    public void setCombustivel(List<Combustivel> combustivel) {
-        this.combustivel = combustivel;
+    public void setCombustiveis(List<Combustivel> combustiveis) {
+        this.combustiveis = combustiveis;
     }
 
     public int getNota() {
