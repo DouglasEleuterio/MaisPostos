@@ -5,4 +5,5 @@
     android:name="com.google.android.gms.maps.SupportMapFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.ufg.gleibson.postos.Controler.MapaActivity" />
+    tools:context="com.ufg.gleibson.postos.Controler.MapaActivity"
+    tools:layout="@layout/abc_action_bar_view_list_nav_layout" />

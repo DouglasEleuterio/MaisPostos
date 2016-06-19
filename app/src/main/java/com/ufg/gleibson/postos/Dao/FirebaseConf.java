@@ -10,6 +10,9 @@ import java.util.Map;
  * Created by gleibson on 17/06/16.
  */
 public class FirebaseConf {
+    /**
+     * Variável para ler e escrever no Firebase
+     */
     private Firebase fb = new Firebase("https://inner-replica-134523.firebaseio.com/");
 
     /**
