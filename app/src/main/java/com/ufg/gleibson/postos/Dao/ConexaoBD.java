@@ -1,26 +1,30 @@
 package com.ufg.gleibson.postos.Dao;
 
-import com.google.android.gms.vision.text.internal.client.SymbolBoxParcel;
 import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.ufg.gleibson.postos.Model.Posto;
 
 import java.util.Map;
 
 /**
  * Created by gleibson on 17/06/16.
  */
-public class FirebaseConf {
+public class ConexaoBD {
     /**
      * Variável para ler e escrever no Firebase
      */
     private Firebase fb = new Firebase("https://inner-replica-134523.firebaseio.com/");
+    private DatabaseReference dbr = FirebaseDatabase.getInstance().getReference();
 
     /**
-     * Método para envio de objetos json ao banco do FireBase
-     * @param msg
+     * Método para envio de objetos postos ao banco do FireBase (transformados em JSON)
+     * @param id
+     * @param posto
      */
-    public void enviar(String msg){
-        fb.setValue(msg);
+    public void escreverNovoPosto(String id, Posto posto) {
+        dbr.child("postos").child(id).setValue(posto);
     }
 
     /**
