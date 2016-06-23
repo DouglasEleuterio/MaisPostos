@@ -4,22 +4,22 @@ package com.ufg.gleibson.postos.Model;
  * Created by gleibson on 16/06/16.
  */
 public class Usuario {
-    private String nome;
-    private String nomeUsuario;
+    private String email;
+    private String senha;
 
-    public String getNome() {
-        return nome;
+    public String getEmail() {
+        return email;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getNomeUsuario() {
-        return nomeUsuario;
+    public String getSenha() {
+        return senha;
     }
 
-    public void setNomeUsuario(String nomeUsuario) {
-        this.nomeUsuario = nomeUsuario;
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 }
