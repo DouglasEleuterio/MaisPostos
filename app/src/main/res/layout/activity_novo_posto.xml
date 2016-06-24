@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:context=".Controler.NovoPostoActivity">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -95,7 +96,7 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="25dp"
+            android:layout_height="25dp" />
 
         <Button
             android:padding="16dp"
