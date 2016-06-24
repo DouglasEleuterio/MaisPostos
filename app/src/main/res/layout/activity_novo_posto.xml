@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".Controler.NovoPostoActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="center_horizontal">
+
+        <EditText
+            android:id="@+id/edit_text_nome"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/nome"
+            android:textColor="#009688"
+            android:textColorHint="#80CBC4"
+            android:padding="16dp" />
+
+        <EditText
+            android:id="@+id/edit_text_bandeira"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/bandeira"
+            android:textColor="#009688"
+            android:textColorHint="#80CBC4"
+            android:padding="16dp" />
+
+        <EditText
+            android:id="@+id/edit_text_gasolina"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/gasolina"
+            android:textColor="#009688"
+            android:textColorHint="#80CBC4"
+            android:padding="16dp" />
+
+        <EditText
+            android:id="@+id/edit_text_gasolina_aditivada"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/gasolina_aditivada"
+            android:textColor="#009688"
+            android:textColorHint="#80CBC4"
+            android:padding="16dp" />
+
+        <EditText
+            android:id="@+id/edit_text_alcool"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/alcool"
+            android:textColor="#009688"
+            android:textColorHint="#80CBC4"
+            android:padding="16dp" />
+
+        <EditText
+            android:id="@+id/edit_text_alcool_aditivado"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/alcool_aditivado"
+            android:textColor="#009688"
+            android:textColorHint="#80CBC4"
+            android:padding="16dp" />
+
+        <EditText
+            android:id="@+id/edit_text_diesel"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/diesel"
+            android:textColor="#009688"
+            android:textColorHint="#80CBC4"
+            android:padding="16dp" />
+
+        <EditText
+            android:id="@+id/edit_text_diesel_s10"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/diesel_s10"
+            android:textColor="#009688"
+            android:textColorHint="#80CBC4"
+            android:padding="16dp" />
+
+        <EditText
+            android:id="@+id/edit_text_atendimento"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/atendimento"
+            android:textColor="#009688"
+            android:textColorHint="#80CBC4"
+            android:padding="16dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+
+        <Button
+            android:padding="16dp"
+            android:layout_width="300dp"
+            android:layout_height="55dp"
+            android:text="@string/comecar"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:textColor="@android:color/background_light"
+            android:textSize="20dp"
+            android:background="#009688"
+            android:onClick=""/>
+
+    </LinearLayout>
+</ScrollView>

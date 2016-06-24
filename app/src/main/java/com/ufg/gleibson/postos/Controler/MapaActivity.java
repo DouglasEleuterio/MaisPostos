@@ -2,6 +2,7 @@ package com.ufg.gleibson.postos.Controler;
 
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import com.ufg.gleibson.postos.R;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
