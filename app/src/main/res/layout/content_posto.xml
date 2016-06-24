@@ -22,12 +22,14 @@
         android:textColor="#009688"
         android:textSize="25dp"
         android:textStyle="bold"
-        android:text="Posto" />
+        android:text="Posto"
+    />
 
     <ImageView
         android:padding="16dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+    />
 
     <LinearLayout
         android:padding="16dp"
@@ -46,13 +48,15 @@
             android:textColor="#009688"
             android:textSize="23dp"
             android:text="Atendimento: 1;
-            Gasolina: R$ 3,80" />
+                          Gasolina: R$ 3,80"
+        />
 
     </LinearLayout>
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="25dp" />
+        android:layout_height="25dp"
+    />
     
     <TextView
         android:id="@+id/edit_text_ultima_atualizacao"
@@ -63,6 +67,7 @@
         android:layout_gravity="center"
         android:textColor="#009688"
         android:textSize="15dp"
-        android:text="Ultima atualização" />
+        android:text="Ultima atualização"
+    />
 
 </LinearLayout>

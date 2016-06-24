@@ -13,11 +13,13 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="120dp"
-        android:src="@drawable/logo_branca"/>
+        android:src="@drawable/logo_branca"
+    />
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="25dp" />
+        android:layout_height="25dp"
+    />
 
     <TextView
         android:padding="16dp"
@@ -28,11 +30,8 @@
         android:textColor="@android:color/background_light"
         android:textSize="25dp"
         android:textStyle="bold"
-        android:text="@string/cadastre_se" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="25dp" />
+        android:text="@string/cadastre_se"
+    />
 
     <EditText
         android:id="@+id/edit_text_seu_email"
@@ -41,7 +40,8 @@
         android:hint="@string/seu_email"
         android:textColor="@android:color/background_light"
         android:textColorHint="@color/common_action_bar_splitter"
-        android:padding="16dp" />
+        android:padding="16dp"
+    />
 
     <EditText
         android:id="@+id/edit_text_sua_senha"
@@ -50,11 +50,13 @@
         android:hint="@string/crie_uma_senha"
         android:textColor="@android:color/background_light"
         android:textColorHint="@color/common_action_bar_splitter"
-        android:padding="16dp" />
+        android:padding="16dp"
+    />
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="25dp" />
+        android:layout_height="25dp"
+    />
 
     <Button
         android:padding="16dp"
@@ -66,11 +68,13 @@
         android:textColor="#009688"
         android:textSize="20dp"
         android:background="@android:color/background_light"
-        android:onClick=""/>
+        android:onClick=""
+    />
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="25dp" />
+        android:layout_height="25dp"
+    />
 
     <TextView
         android:padding="16dp"
@@ -81,6 +85,7 @@
         android:textColor="@android:color/background_light"
         android:textSize="25dp"
         android:textStyle="bold"
-        android:text="@string/ja_possui" />
+        android:text="@string/ja_possui"
+    />
 
 </LinearLayout>
