@@ -29,7 +29,7 @@ public class ConexaoBD {
      * Variáveis para ler e escrever no Firebase
      */
     private String link = "https://inner-replica-134523.firebaseio.com/";
-//    private Firebase = new Firebase(link);
+    private FirebaseDatabase = new Firebase(link);
     private DatabaseReference dbr = FirebaseDatabase.getInstance().getReference();
     private FirebaseUser usuario = FirebaseAuth.getInstance().getCurrentUser();
     private FirebaseAuth fa = FirebaseAuth.getInstance();
