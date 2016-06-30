@@ -3,6 +3,8 @@ package com.ufg.gleibson.postos.Controler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.ufg.gleibson.postos.R;
+
 public class PostoActivity extends AppCompatActivity {
 
     @Override

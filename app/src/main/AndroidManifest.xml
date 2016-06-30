@@ -36,20 +36,13 @@
             android:name=".Controler.LoginActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
 
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
-
         <activity
             android:name=".Controler.NovoPostoActivity"
             android:label="@string/novo_posto" />
         <activity
             android:name=".Controler.CadastroActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
-        <activity
-            android:name=".Controler.SplashActivity"
-            android:theme="@style/SplashTheme" />
-        <activity android:name=".Controler.PostoActivity"></activity>
+        <!--activity android:name=".Controler.PostoActivity" /-->
     </application>
 
 </manifest>
