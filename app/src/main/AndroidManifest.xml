@@ -42,7 +42,7 @@
         <activity
             android:name=".Controler.CadastroActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
-        <!--activity android:name=".Controler.PostoActivity" /-->
+        <activity android:name=".Controler.PostoActivity" />
     </application>
 
 </manifest>
