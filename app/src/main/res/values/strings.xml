@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">+Postos</string>
     <!-- Strings das telas -->
+    <string name="posto">Posto</string>
     <string name="gasolina">Gasolina</string>
     <string name="gasolina_aditivada">Gasolina Aditivada</string>
     <string name="gas">Gas</string>
@@ -48,5 +49,7 @@
     <string name="atualizacao_precos">Atualização de Preços</string>
     <string name="nota_atendimento">Nota do Atendimento</string>
     <string name="editar_posto">Editar Posto</string>
+    <string name="search_title">search_title</string>
+    <string name="search_hint">search_hint</string>
 
 </resources>

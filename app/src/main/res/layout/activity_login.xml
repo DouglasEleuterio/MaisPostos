@@ -30,8 +30,28 @@
         android:textColor="@android:color/background_light"
         android:textSize="25dp"
         android:textStyle="bold"
-        android:text="@string/qual_combustivel_voce_usa"
+        android:text="@string/login"
     />
+
+    <EditText
+        android:id="@+id/edit_text_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/email"
+        android:textColor="@android:color/background_light"
+        android:textColorHint="@color/common_action_bar_splitter"
+        android:padding="16dp"
+        />
+
+    <EditText
+        android:id="@+id/edit_text_senha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/senha"
+        android:textColor="@android:color/background_light"
+        android:textColorHint="@color/common_action_bar_splitter"
+        android:padding="16dp"
+        />
 
     <View
         android:layout_width="match_parent"
@@ -42,7 +62,7 @@
         android:padding="16dp"
         android:layout_width="300dp"
         android:layout_height="55dp"
-        android:text="@string/comecar"
+        android:text="@string/entrar"
         android:textStyle="bold"
         android:textAllCaps="false"
         android:textColor="#009688"
