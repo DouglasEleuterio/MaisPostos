@@ -81,7 +81,7 @@
         android:textAllCaps="false"
         android:textColor="@android:color/background_light"
         android:textSize="20dp"
-        android:background="#009688"
+        android:background="@android:color/transparent"
         android:onClick="toLogin" />
 
 </LinearLayout>

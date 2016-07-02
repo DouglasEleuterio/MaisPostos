@@ -37,7 +37,7 @@
     <string name="cadastre_se">Cadastre-se no +Postos</string>
     <string name="seu_email">Seu Email</string>
     <string name="crie_uma_senha">Crie uma senha</string>
-    <string name="ja_possui">Ja possui uma conta?</string>
+    <string name="ja_possui"><u>Ja possui uma conta?</u></string>
     <string name="login">Login</string>
     <string name="email">Email</string>
     <string name="senha">Senha</string>
