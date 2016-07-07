@@ -36,14 +36,34 @@
         android:padding="16dp">
 
         <TextView
-            android:padding="16dp"
+            android:padding="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="viewStart"
             android:layout_gravity="center"
             android:textColor="#009688"
             android:textSize="22dp"
-            android:text="Atendimento: 8             Gasolina: R$ 3,80       Aditivada: R$ 3,90" />
+            android:text="Atendimento: 8" />
+
+        <TextView
+            android:padding="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="viewStart"
+            android:layout_gravity="center"
+            android:textColor="#009688"
+            android:textSize="22dp"
+            android:text="Gasolina: R$ 3,80" />
+
+        <TextView
+            android:padding="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="viewStart"
+            android:layout_gravity="center"
+            android:textColor="#009688"
+            android:textSize="22dp"
+            android:text="Aditivada: R$ 3,90" />
 
     </LinearLayout>
 
@@ -52,7 +72,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:layout_marginTop="42dp"
+        android:layout_marginBottom="0dp"
         android:layout_gravity="center"
         android:textColor="#009688"
         android:textSize="16dp"

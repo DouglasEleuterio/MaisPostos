@@ -26,9 +26,9 @@ public class InicioActivity extends AppCompatActivity implements OnMapReadyCallb
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
 
-        MapFragment mapFragment = (MapFragment) getFragmentManager()
+/*        MapFragment mapFragment = (MapFragment) getFragmentManager()
                 .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
+        mapFragment.getMapAsync(this);*/
 
     }
 
