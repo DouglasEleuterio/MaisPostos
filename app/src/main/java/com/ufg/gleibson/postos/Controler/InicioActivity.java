@@ -11,14 +11,25 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.ufg.gleibson.postos.R;
 
-public class InicioActivity extends AppCompatActivity {
+public class InicioActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
+
+        MapFragment mapFragment = (MapFragment) getFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
+
     }
 
     public void novoPosto(View view){
@@ -36,6 +47,20 @@ public class InicioActivity extends AppCompatActivity {
     public void posto(View view){
         Intent intent = new Intent(this, PostoActivity.class);
         startActivity(intent);
+    }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        LatLng postoBandeiras = new LatLng(-33.867, 151.206);
+
+        googleMap.setMyLocationEnabled(true);
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(postoBandeiras, 13));
+
+        googleMap.addMarker(new MarkerOptions()
+                .title("Posto Bandeiras")
+                .snippet("3,80")
+                .snippet("8")
+                .position(postoBandeiras));
     }
 
    /* @Override
