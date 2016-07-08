@@ -3,6 +3,7 @@ package com.ufg.gleibson.postos.Controler;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,23 +13,33 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 
+import com.google.android.gms.appindexing.Action;
+import com.google.android.gms.appindexing.AppIndex;
+import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.ufg.gleibson.postos.R;
 
+import java.util.Map;
+
 public class InicioActivity extends FragmentActivity implements OnMapReadyCallback {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)  {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
 
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+        initMap();
+    }
+
+    private void initMap() {
+        MapFragment mapFragment = (MapFragment) getFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
     }
@@ -38,21 +49,22 @@ public class InicioActivity extends FragmentActivity implements OnMapReadyCallba
         LatLng goiania = new LatLng(-16.6808663, -49.2532674);
         googleMap.addMarker(new MarkerOptions().position(goiania).title("Posto"));
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(goiania));
+        googleMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
     }
 
-    public void novoPosto(View view){
+
+
+    public void novoPosto(View view) {
         Intent intent = new Intent(this, NovoPostoActivity.class);
         startActivity(intent);
     }
-    public void cadastro(View view) {
-        Intent intent = new Intent(this, CadastroActivity.class);
-        startActivity(intent);
-    }
-    public void login(View view){
+
+    public void login(View view) {
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
     }
-    public void posto(View view){
+
+    public void posto(View view) {
         Intent intent = new Intent(this, PostoActivity.class);
         startActivity(intent);
     }

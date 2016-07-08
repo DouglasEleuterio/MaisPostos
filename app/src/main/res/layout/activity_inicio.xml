@@ -39,15 +39,6 @@
             android:background="#009688"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="cadastro"
-            android:onClick="cadastro"/>
-
-        <Button
-            android:layout_weight="1"
-            android:textColor="@android:color/background_light"
-            android:background="#009688"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:text="@string/posto"
             android:onClick="posto"/>
 
@@ -58,7 +49,7 @@
         android:layout_marginTop="?actionBarSize"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:name="com.google.android.gms.maps.MapFragment"
         tools:layout="@layout/abc_action_mode_bar" />
 
 </LinearLayout>
