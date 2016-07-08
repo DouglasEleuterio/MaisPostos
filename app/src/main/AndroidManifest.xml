@@ -28,9 +28,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <!-- Chave Gleibson -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDbYP2N8nZdOiLsXfh1fTlt1YmhymcQFWI"/>
+        
+        <!-- Chave Marcos -->
+        <!--
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCViohtwDHztqejDabrLyj9ldgiyMLXZ7s"/> -->
 
         <activity
             android:name=".Controler.InicioActivity"
