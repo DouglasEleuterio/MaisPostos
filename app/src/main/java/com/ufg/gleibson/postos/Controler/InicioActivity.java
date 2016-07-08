@@ -3,6 +3,7 @@ package com.ufg.gleibson.postos.Controler;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.SearchView;
@@ -15,21 +16,28 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.ufg.gleibson.postos.R;
 
-public class InicioActivity extends AppCompatActivity implements OnMapReadyCallback {
+public class InicioActivity extends FragmentActivity implements OnMapReadyCallback {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
 
-/*        MapFragment mapFragment = (MapFragment) getFragmentManager()
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);*/
+        mapFragment.getMapAsync(this);
+    }
 
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        LatLng goiania = new LatLng(-16.6808663, -49.2532674);
+        googleMap.addMarker(new MarkerOptions().position(goiania).title("Posto"));
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(goiania));
     }
 
     public void novoPosto(View view){
@@ -47,20 +55,6 @@ public class InicioActivity extends AppCompatActivity implements OnMapReadyCallb
     public void posto(View view){
         Intent intent = new Intent(this, PostoActivity.class);
         startActivity(intent);
-    }
-
-    @Override
-    public void onMapReady(GoogleMap googleMap) {
-        LatLng postoBandeiras = new LatLng(-33.867, 151.206);
-
-        googleMap.setMyLocationEnabled(true);
-        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(postoBandeiras, 13));
-
-        googleMap.addMarker(new MarkerOptions()
-                .title("Posto Bandeiras")
-                .snippet("3,80")
-                .snippet("8")
-                .position(postoBandeiras));
     }
 
    /* @Override
