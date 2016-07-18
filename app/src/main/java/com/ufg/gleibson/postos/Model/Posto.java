@@ -1,5 +1,7 @@
 package com.ufg.gleibson.postos.Model;
 
+import com.google.android.gms.maps.model.LatLng;
+
 import java.util.*;
 
 /**
@@ -11,19 +13,27 @@ public class Posto {
     private String bandeira;
     private List<Combustivel> combustiveis;
     private int nota;
-    private double lat;
-    private double lon;
+    private LatLng latLng;
 
-    public Posto(int id, String nome, String bandeira, double lat, double lon) {
+    public Posto(int id, String nome, String bandeira, List<Combustivel> combustiveis, int nota, LatLng latLng) {
         this.id = id;
         this.nome = nome;
         this.bandeira = bandeira;
-        this.lat = lat;
-        this.lon = lon;
+        this.combustiveis = combustiveis;
+        this.nota = nota;
+        this.latLng = latLng;
     }
 
     public int getId() {
         return id;
+    }
+
+    public LatLng getLatLng() {
+        return latLng;
+    }
+
+    public void setLatLng(LatLng latLng) {
+        this.latLng = latLng;
     }
 
     public void setId(int id) {
@@ -32,22 +42,6 @@ public class Posto {
 
     public List<Combustivel> getCombustiveis() {
         return combustiveis;
-    }
-
-    public double getLat() {
-        return lat;
-    }
-
-    public void setLat(double lat) {
-        this.lat = lat;
-    }
-
-    public double getLon() {
-        return lon;
-    }
-
-    public void setLon(double lon) {
-        this.lon = lon;
     }
 
     public String getNome() {
