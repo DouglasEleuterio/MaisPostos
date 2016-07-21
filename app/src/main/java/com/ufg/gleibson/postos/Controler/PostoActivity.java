@@ -34,5 +34,6 @@ public class PostoActivity extends AppCompatActivity {
     public void editarPosto(View view){
         Intent intent = new Intent(this, NovoPostoActivity.class);
         startActivity(intent);
+        finish();
     }
 }

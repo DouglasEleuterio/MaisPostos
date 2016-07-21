@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:gravity="center_horizontal"
+    android:orientation="vertical"
     tools:context="com.ufg.gleibson.postos.Controler.PostoActivity">
 
     <android.support.v7.widget.Toolbar
@@ -15,8 +15,7 @@
         android:background="#009688"
         android:textAlignment="textStart"
         app:navigationIcon="@drawable/ic_arrow_back_black_24dp"
-        app:titleTextColor="@android:color/background_light">
-    </android.support.v7.widget.Toolbar>
+        app:titleTextColor="@android:color/background_light"></android.support.v7.widget.Toolbar>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -25,65 +24,83 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
             android:gravity="center_horizontal"
-            android:padding="16dp">
-
-        <TextView
-            android:padding="16dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:layout_gravity="center"
-            android:textColor="#009688"
-            android:textSize="25dp"
-            android:textStyle="bold"
-            android:text="@string/posto" />
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:src="@drawable/logo_branca" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="25dp" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="16dp">
 
             <TextView
-                android:padding="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="viewStart"
                 android:layout_gravity="center"
+                android:padding="16dp"
+                android:text="@string/posto"
+                android:textAlignment="center"
                 android:textColor="#009688"
-                android:textSize="22dp"
-                android:text="Atendimento: 8" />
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:src="@drawable/logo_branca" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="25dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="8dp"
+                    android:text="Atendimento: 8"
+                    android:textAlignment="viewStart"
+                    android:textColor="#009688"
+                    android:textSize="22dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="8dp"
+                    android:text="Gasolina: R$ 3,80"
+                    android:textAlignment="viewStart"
+                    android:textColor="#009688"
+                    android:textSize="22dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="8dp"
+                    android:text="Aditivada: R$ 3,90"
+                    android:textAlignment="viewStart"
+                    android:textColor="#009688"
+                    android:textSize="22dp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="80dp"
+                android:layout_height="match_parent" />
 
             <TextView
-                android:padding="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="viewStart"
                 android:layout_gravity="center"
+                android:layout_marginBottom="0dp"
+                android:padding="16dp"
+                android:text="Ultima atualização em: 01/07/2016"
+                android:textAlignment="center"
                 android:textColor="#009688"
-                android:textSize="22dp"
-                android:text="Gasolina: R$ 3,80" />
+                android:textSize="16dp" />
 
-            <TextView
-                android:padding="8dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="viewStart"
-                android:layout_gravity="center"
-                android:textColor="#009688"
-                android:textSize="22dp"
-                android:text="Aditivada: R$ 3,90" />
 
             <android.support.design.widget.FloatingActionButton
                 android:id="@+id/fab"
@@ -91,25 +108,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|end"
                 android:layout_margin="@dimen/fab_margin"
-                android:src="@android:drawable/ic_menu_edit"
-                android:onClick="editarPosto"/>
-
-        </LinearLayout>
-
-        <View
-             android:layout_width="80dp"
-             android:layout_height="match_parent"/>
-
-        <TextView
-            android:padding="16dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:layout_marginBottom="0dp"
-            android:layout_gravity="center"
-            android:textColor="#009688"
-            android:textSize="16dp"
-            android:text="Ultima atualização em: 01/07/2016" />
+                android:onClick="editarPosto"
+                android:src="@android:drawable/ic_menu_edit" />
 
         </LinearLayout>
 
