@@ -1,82 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:gravity="center_horizontal"
     tools:context="com.ufg.gleibson.postos.Controler.PostoActivity">
 
-    <TextView
-        android:padding="16dp"
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolBarPosto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:layout_gravity="center"
-        android:textColor="#009688"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        android:text="@string/posto" />
+        android:background="#009688"
+        android:textAlignment="textStart"
+        app:navigationIcon="@drawable/ic_arrow_back_black_24dp"
+        app:titleTextColor="@android:color/background_light">
+    </android.support.v7.widget.Toolbar>
 
-    <ImageView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:src="@drawable/logo_branca" />
+        android:layout_height="match_parent">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="25dp" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="16dp">
 
         <TextView
-            android:padding="8dp"
+            android:padding="16dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="viewStart"
+            android:textAlignment="center"
             android:layout_gravity="center"
             android:textColor="#009688"
-            android:textSize="22dp"
-            android:text="Atendimento: 8" />
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:text="@string/posto" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:src="@drawable/logo_branca" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="25dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="viewStart"
+                android:layout_gravity="center"
+                android:textColor="#009688"
+                android:textSize="22dp"
+                android:text="Atendimento: 8" />
+
+            <TextView
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="viewStart"
+                android:layout_gravity="center"
+                android:textColor="#009688"
+                android:textSize="22dp"
+                android:text="Gasolina: R$ 3,80" />
+
+            <TextView
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="viewStart"
+                android:layout_gravity="center"
+                android:textColor="#009688"
+                android:textSize="22dp"
+                android:text="Aditivada: R$ 3,90" />
+
+        </LinearLayout>
+
+        <View
+             android:layout_width="80dp"
+             android:layout_height="match_parent"/>
 
         <TextView
-            android:padding="8dp"
+            android:padding="16dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="viewStart"
+            android:textAlignment="center"
+            android:layout_marginBottom="0dp"
             android:layout_gravity="center"
             android:textColor="#009688"
-            android:textSize="22dp"
-            android:text="Gasolina: R$ 3,80" />
+            android:textSize="16dp"
+            android:text="Ultima atualização em: 01/07/2016" />
 
-        <TextView
-            android:padding="8dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="viewStart"
-            android:layout_gravity="center"
-            android:textColor="#009688"
-            android:textSize="22dp"
-            android:text="Aditivada: R$ 3,90" />
+        </LinearLayout>
 
-    </LinearLayout>
-
-    <TextView
-        android:padding="16dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:layout_marginBottom="0dp"
-        android:layout_gravity="center"
-        android:textColor="#009688"
-        android:textSize="16dp"
-        android:text="Ultima atualização em: 01/07/2016" />
-
+    </ScrollView>
 
 </LinearLayout>

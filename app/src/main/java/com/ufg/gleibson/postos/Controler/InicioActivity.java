@@ -1,45 +1,77 @@
 package com.ufg.gleibson.postos.Controler;
 
-import android.app.SearchManager;
-import android.content.Context;
-import android.support.v7.internal.app.ToolbarActionBar;
-import android.support.v7.internal.widget.ToolbarWidgetWrapper;
-import android.support.v7.widget.Toolbar;
 import android.content.Intent;
-import android.net.Uri;
-import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.AppCompatActivity;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.v7.widget.SearchView;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.ActionMode;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.View;
 
-import com.google.android.gms.appindexing.Action;
-import com.google.android.gms.appindexing.AppIndex;
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.ufg.gleibson.postos.Model.Combustivel;
-import com.ufg.gleibson.postos.Model.Posto;
 import com.ufg.gleibson.postos.R;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+public class InicioActivity extends AppCompatActivity implements OnMapReadyCallback {
 
-public class InicioActivity extends FragmentActivity implements OnMapReadyCallback {
+//    private Controle controle = new Controle();
 
-//    private ControleActivity controleActivity = new ControleActivity();
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_inicio);
+        initMap();
+        initToolbar();
+    }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        LatLng inicial = new LatLng(-16.6808663, -49.2532674);
+        int zoomInicial = 15;
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(inicial));
+        googleMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
+        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(inicial, zoomInicial), 1500, null);
+        googleMap.setOnMapLongClickListener(new GoogleMap.OnMapLongClickListener() {
+            @Override
+            public void onMapLongClick(LatLng latLng) {
+                novoPosto();
+            }
+        });
+        googleMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+            @Override
+            public void onInfoWindowClick(Marker marker) {
+                posto();
+            }
+        });
+
+//        for (Posto posto : controleActivity.getListaPosto()) {
+//            googleMap.addMarker(new MarkerOptions().position(posto.getLatLng()).title(posto.getNome()));
+//        }
+
+        LatLng posto2 = new LatLng(-16.676539, -49.243898);
+        googleMap.addMarker(new MarkerOptions().position(inicial).title("Posto1").snippet("Nota: 8")
+                .icon(BitmapDescriptorFactory.fromBitmap(initIcon(R.drawable.ic_local_gas_24dp))));
+        googleMap.addMarker(new MarkerOptions().position(posto2).title("Posto2").snippet("Nota: 6")
+                .icon(BitmapDescriptorFactory.fromBitmap(initIcon(R.drawable.ic_local_gas_24dp))));
+
+        googleMap.getUiSettings().setMapToolbarEnabled(false);
+    }
+
+    private Bitmap initIcon(int i) {
+        Drawable d = getResources().getDrawable(i);
+        Bitmap bitmap = Bitmap.createBitmap(d.getIntrinsicWidth(), d.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+        Canvas ca = new Canvas();
+        ca.setBitmap(bitmap);
+        d.setBounds(0, 0, d.getIntrinsicWidth(), d.getIntrinsicHeight());
+        d.draw(ca);
+        return bitmap;
+    }
 
     private void initMap() {
         MapFragment mapFragment = (MapFragment) getFragmentManager()
@@ -47,43 +79,23 @@ public class InicioActivity extends FragmentActivity implements OnMapReadyCallba
         mapFragment.getMapAsync(this);
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_inicio);
-        initMap();
-        final Toolbar toolbar = (Toolbar) findViewById(R.id.toolBarInicio);
+    private void initToolbar() {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolBarInicio);
+        toolbar.setTitle("+Postos");
+        setSupportActionBar(toolbar);
     }
 
-    @Override
-    public void onMapReady(GoogleMap googleMap) {
-        LatLng goiania = new LatLng(-16.6808663, -49.2532674);
-        int zoomInicial = 12;
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(goiania));
-        googleMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
-        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(goiania, zoomInicial), 1500, null);
-
-//        for (Posto posto : controleActivity.getListaPosto()) {
-//            googleMap.addMarker(new MarkerOptions().position(posto.getLatLng()).title(posto.getNome()));
-//            googleMap.setOnMarkerClickListener(posto);
-//        }
-        LatLng goiania2 = new LatLng(-16.676539, -49.243898);
-        googleMap.addMarker(new MarkerOptions().position(goiania).title("Posto1"));
-        googleMap.addMarker(new MarkerOptions().position(goiania2).title("Posto2"));
-
-    }
-
-    public void novoPosto(View view) {
+    private void novoPosto() {
         Intent intent = new Intent(this, NovoPostoActivity.class);
         startActivity(intent);
     }
 
-    public void login(View view) {
+    private void login() {
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
     }
 
-    public void posto(View view) {
+    private void posto() {
         Intent intent = new Intent(this, PostoActivity.class);
         startActivity(intent);
     }

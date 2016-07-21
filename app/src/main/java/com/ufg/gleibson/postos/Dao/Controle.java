@@ -1,4 +1,4 @@
-package com.ufg.gleibson.postos.Controler;
+package com.ufg.gleibson.postos.Dao;
 
 import com.ufg.gleibson.postos.Dao.ConexaoBD;
 import com.ufg.gleibson.postos.Model.Posto;
@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Created by gleibson on 15/07/16.
  */
-public class ControleActivity {
+public class Controle {
 
     private ConexaoBD banco = new ConexaoBD();
 
