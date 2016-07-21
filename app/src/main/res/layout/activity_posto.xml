@@ -1,21 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
-    android:orientation="vertical"
     tools:context="com.ufg.gleibson.postos.Controler.PostoActivity">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolBarPosto"
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#009688"
-        android:textAlignment="textStart"
-        app:navigationIcon="@drawable/ic_arrow_back_black_24dp"
-        app:titleTextColor="@android:color/background_light"></android.support.v7.widget.Toolbar>
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolBarPosto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#009688"
+            android:textAlignment="textStart"
+            app:navigationIcon="@drawable/ic_arrow_back_black_24dp"
+            app:titleTextColor="@android:color/background_light"></android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -26,7 +32,7 @@
             android:layout_height="match_parent"
             android:gravity="center_horizontal"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:layout_marginTop="?actionBarSize">
 
             <TextView
                 android:layout_width="match_parent"
@@ -84,35 +90,40 @@
                     android:textColor="#009688"
                     android:textSize="22dp" />
 
+                <View
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="16dp"
+                    android:padding="16dp"
+                    android:text="Ultima atualização em: 01/07/2016"
+                    android:textAlignment="center"
+                    android:textColor="#009688"
+                    android:textSize="16dp" />
+
             </LinearLayout>
 
-            <View
-                android:layout_width="80dp"
-                android:layout_height="match_parent" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="0dp"
-                android:padding="16dp"
-                android:text="Ultima atualização em: 01/07/2016"
-                android:textAlignment="center"
-                android:textColor="#009688"
-                android:textSize="16dp" />
-
-
-            <android.support.design.widget.FloatingActionButton
-                android:id="@+id/fab"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|end"
-                android:layout_margin="@dimen/fab_margin"
-                android:onClick="editarPosto"
-                android:src="@android:drawable/ic_menu_edit" />
 
         </LinearLayout>
 
     </ScrollView>
 
-</LinearLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="editarPosto"
+        android:src="@android:drawable/ic_menu_edit"
+        android:layout_gravity="bottom|end"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"/>
+
+</android.support.design.widget.CoordinatorLayout>

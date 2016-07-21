@@ -23,7 +23,7 @@ import com.ufg.gleibson.postos.R;
 
 public class InicioActivity extends AppCompatActivity implements OnMapReadyCallback {
 
-    private Controle controle = new Controle();
+  //  private Controle controle = new Controle();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,12 +53,12 @@ public class InicioActivity extends AppCompatActivity implements OnMapReadyCallb
             }
         });
 
-        for (Posto posto : controle.getListaPosto()) {
+ /*       for (Posto posto : controle.getListaPosto()) {
             googleMap.addMarker(new MarkerOptions().position(posto.getLatLng())
                     .title(posto.getNome()).snippet("Nota: "+ String.valueOf(posto.getNota()))
                     .icon(BitmapDescriptorFactory
                             .fromBitmap(initMarker(R.drawable.ic_local_gas_24dp))));
-        }
+        }*/
 
         LatLng posto2 = new LatLng(-16.676539, -49.243898);
         googleMap.addMarker(new MarkerOptions().position(inicial).title("Posto1").snippet("Nota: 8")
