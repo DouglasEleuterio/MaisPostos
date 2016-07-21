@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.ufg.gleibson.postos.R;
 
@@ -28,5 +29,10 @@ public class PostoActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         finish();
         return super.onOptionsItemSelected(item);
+    }
+
+    public void editarPosto(View view){
+        Intent intent = new Intent(this, NovoPostoActivity.class);
+        startActivity(intent);
     }
 }
