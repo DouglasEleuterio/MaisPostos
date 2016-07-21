@@ -30,8 +30,6 @@ public class ConexaoBD {
      */
     private String link = "https://inner-replica-134523.firebaseio.com/";
     private DatabaseReference dbr = FirebaseDatabase.getInstance().getReference(link);
-    private FirebaseUser usuario = FirebaseAuth.getInstance().getCurrentUser();
-    private FirebaseAuth fa = FirebaseAuth.getInstance();
     private String colecao = "postos";
 
     /**
@@ -95,111 +93,5 @@ public class ConexaoBD {
                 }
         );
         return dbr;
-    }
-
-    /**
-     * Busca um usuário com o login atual no sistema
-     */
-    public void autenticarUsuario() {
-        new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (user != null) {
-                    Log.d("Ok", "onAuthStateChanged:signed-in:" + user.getUid());
-                } else {
-                    Log.d("Erro", "onAuthStateChanged:signed_out");
-                }
-            }
-        };
-    }
-
-    /**
-     * Pega o usuário no Firebase e retorna uma lista com os dados do mesmo
-     * @return
-     */
-    public List getUsuario() {
-        List<String> lista = new ArrayList<String>();
-        if (usuario != null) {
-            String nome = usuario.getDisplayName();
-            lista.add(nome);
-            String email = usuario.getEmail();
-            lista.add(email);
-            String uid = usuario.getUid();
-            lista.add(uid);
-        }
-        return lista;
-    }
-
-    /**
-     * Atualiza o email de um usuario.
-     * @param email
-     */
-    public void atualizarEmail(String email) {
-        usuario.updateEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                if (task.isSuccessful()) {
-                    Log.d("Ok", "Email atualizado!");
-                }
-            }
-        });
-    }
-
-    /**
-     * Atualiza a senha de um usuario.
-     * @param senha
-     */
-    public void atualizarSenha(String senha) {
-        usuario.updatePassword(senha).addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                if (task.isSuccessful()) {
-                    Log.d("Ok", "Senha atualizada!");
-                }
-            }
-        });
-    }
-
-    /**
-     * Deleta um usuário do banco.
-     */
-    public void excluirUsuario() {
-        usuario.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                if (task.isSuccessful()) {
-                    Log.d("Ok", "Usuario excluido!");
-                }
-            }
-        });
-    }
-
-    /**
-     * Criar um usuário com email e senha
-     * @param email
-     * @param senha
-     */
-    public boolean criarUsuario(String email, String senha){
-        fa.createUserWithEmailAndPassword(email, senha);
-        return true;
-    }
-
-    /**
-     * Logar no sistema com email e senha.
-     * @param email
-     * @param senha
-     */
-    public boolean logarUsuario(String email, String senha){
-        fa.signInWithEmailAndPassword(email, senha);
-        return true;
-    }
-
-    /**
-     * Fazer logof em um usuário
-     */
-    public boolean logofUsuario() {
-        fa.signOut();
-        return true;
     }
 }
