@@ -4,7 +4,9 @@ import android.nfc.Tag;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
+import com.firebase.client.Firebase;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.StreetViewPanoramaCamera;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -28,16 +30,31 @@ public class ConexaoBD {
     /**
      * Variáveis para ler e escrever no Firebase
      */
-    private String link = "https://inner-replica-134523.firebaseio.com/";
-    private DatabaseReference dbr = FirebaseDatabase.getInstance().getReference(link);
+    private String link = null;
+    private Firebase firebase = null;
     private String colecao = "postos";
+
+
+    /* Gleibson
+    public ConexaoBD() {
+        this.link = "https://inner-replica-134523.firebaseio.com/";
+        this.dbr = FirebaseDatabase.getInstance().getReference(link);
+    }  */
+
+    /* Marcos */
+    public ConexaoBD() {
+        this.link = "https://maispostos.firebaseio.com";
+        if (firebase == null) {
+            this.firebase = new Firebase(link);
+        }
+    }
 
     /**
      * Envia instancias de postos ao banco FireBase.
      * @param posto
      */
     public void guardarNovoPosto(Posto posto) {
-        dbr.child(colecao).child(posto.getLatLng().toString()).setValue(posto);
+        firebase.child(colecao).child(posto.getLatLng().toString()).setValue(posto);
     }
 
     /**
@@ -46,9 +63,10 @@ public class ConexaoBD {
      * @param identify
      * @param atributo
      */
-    public void atualizarAtributoPosto(int identify, String atributo) {
+    public void atualizarAtributoPosto(int identify, String atributo, String atualizar) {
         String id = Integer.toString(identify);
-        dbr.child(colecao).child(id).child(atributo).setValue(atributo);
+        firebase = firebase.child(colecao).child(id).child(atributo);
+        firebase.setValue(atualizar);
     }
 
     /**
@@ -57,7 +75,8 @@ public class ConexaoBD {
      */
     public void excluirPosto(int identify) {
         String id = Integer.toString(identify);
-        dbr.child(colecao).child(id).removeValue();
+        firebase = firebase.child(colecao).child(id);
+        firebase.removeValue();
     }
 
     /**
@@ -66,38 +85,10 @@ public class ConexaoBD {
      * @return
      */
     public Object buscarPosto(int identify) {
-        String id = Integer.toString(identify);
-//        return  dbr.child(colecao).child(id).equals(Posto.class);
-        dbr.child(colecao).child(id).addListenerForSingleValueEvent(
-                new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        Posto posto = dataSnapshot.getValue(Posto.class);
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-                        Log.w("getUser:onCancelled", databaseError.toException());
-                    }
-                }
-        );
-        return dbr;
+        return null;
     }
 
     public Object buscarPostoByLatLng(String latLng) {
-        dbr.child(colecao).child(latLng.toString()).addListenerForSingleValueEvent(
-                new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        Posto posto = dataSnapshot.getValue(Posto.class);
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-                        Log.w("getUser:onCancelled", databaseError.toException());
-                    }
-                }
-        );
-        return dbr;
+        return null;
     }
 }

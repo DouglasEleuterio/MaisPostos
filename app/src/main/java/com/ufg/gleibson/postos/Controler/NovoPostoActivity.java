@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
 
 import com.google.android.gms.maps.model.LatLng;
@@ -15,26 +16,22 @@ import com.ufg.gleibson.postos.R;
 
 public class NovoPostoActivity extends AppCompatActivity {
 
-    private Controle controle = new Controle();
+    private String latLngString = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_novo_posto);
         initToolbar();
-        LatLng latLng;
         Intent i = getIntent();
         String localizacao = i.getStringExtra("latlng");
+        latLngString = localizacao;
         if ((localizacao.equals("")) || (localizacao==null)) {
             finish();
         }
-        latLng = stringToLatLng(localizacao);
-
-        Posto posto = getDadosPosto(latLng);
-        salvarPosto(posto);
     }
 
-    private Posto getDadosPosto(LatLng latLng){
+    private Posto getDadosPosto(){
         EditText n = (EditText) findViewById(R.id.edit_text_nome);
         EditText bd = (EditText) findViewById(R.id.edit_text_bandeira);
         EditText gas = (EditText) findViewById(R.id.edit_text_gasolina);
@@ -49,23 +46,18 @@ public class NovoPostoActivity extends AppCompatActivity {
         float diesel = Float.parseFloat(die.getText().toString());
         int nota = Integer.parseInt(nt.getText().toString());
 
+        LatLng latLng = stringToLatLng(latLngString);
         Posto posto = new Posto(nome, bandeira, nota, latLng, gasolina, alcool, diesel);
         return posto;
     }
 
-    private void carregaPostoCadastrado(LatLng latLng) {
-        Posto posto = controle.getPostoByLatLng(latLng);
-
-        /*Não sei se esse método consegue colocar nos EditTexts os valores do posto
-        ele tem q receber um LatLng como o de cima ai e buscar no banco por este atributo
-        temos que ver como fazer essa atualização, acho que teremos que fazer uma nova activity
-        pq não da pra setar valores nos EditTexts */
-
-        //nome.setText(posto.getNome());
-        //bandeira.setText(posto.getBandeira());
+    private void carregaPostoCadastrado(String  latLng) {
+        //
     }
 
-    public void salvarPosto(Posto posto){
+    public void salvarPosto(View view) {
+        Posto posto = getDadosPosto();
+        Controle controle = new Controle();
         controle.incluirNovoPosto(posto);
     }
 
@@ -88,5 +80,4 @@ public class NovoPostoActivity extends AppCompatActivity {
         finish();
         return super.onOptionsItemSelected(item);
     }
-
 }

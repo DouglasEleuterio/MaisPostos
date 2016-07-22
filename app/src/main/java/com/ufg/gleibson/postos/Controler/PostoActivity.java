@@ -15,7 +15,7 @@ import com.ufg.gleibson.postos.R;
 
 public class PostoActivity extends AppCompatActivity {
 
-    private Controle controle = new Controle();
+    //private Controle controle = new Controle();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,15 +26,15 @@ public class PostoActivity extends AppCompatActivity {
         if ((localizacao.equals("")) || (localizacao == null)) {
             finish();
         }
-        LatLng latLng = stringToLatLng(localizacao);
+        //LatLng latLng = stringToLatLng(localizacao);
 
-        Posto posto = buscarPosto(latLng);
-        //Implementar aqui como será setado os valores deste posto nos textViews da tela "Posto"
-
+        Posto posto = buscarPosto(localizacao);
         initToolbar(posto);
+        //Implementar aqui como será setado os valores deste posto nos textViews da tela "Posto";
     }
 
-    private Posto buscarPosto(LatLng latLng){
+    private Posto buscarPosto(String latLng){
+        Controle controle = new Controle();
         return controle.getPostoByLatLng(latLng);
     }
 

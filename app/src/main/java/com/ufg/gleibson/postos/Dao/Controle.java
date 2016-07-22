@@ -14,7 +14,11 @@ import java.util.Objects;
  */
 public class Controle {
 
-    private ConexaoBD banco = new ConexaoBD();
+    private ConexaoBD banco = null;
+
+    public Controle() {
+        this.banco = new ConexaoBD();
+    }
 
     public List<Posto> getListaPosto() {
         List<Posto> lista = new ArrayList<Posto>();
@@ -26,8 +30,8 @@ public class Controle {
         return lista;
     }
 
-    public Posto getPostoByLatLng(LatLng latLng) {
-        return (Posto) banco.buscarPostoByLatLng(latLng.toString());
+    public Posto getPostoByLatLng(String latLng) {
+        return (Posto) banco.buscarPostoByLatLng(latLng);
     }
 
     public void incluirNovoPosto(Posto posto){
