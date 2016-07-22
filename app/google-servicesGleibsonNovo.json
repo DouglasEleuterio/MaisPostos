@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "522397956193",
+    "firebase_url": "https://maispostos.firebaseio.com",
+    "project_id": "maispostos",
+    "storage_bucket": "maispostos.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:522397956193:android:2f6c5191999d87aa",
+        "android_client_info": {
+          "package_name": "com.ufg.gleibson.postos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "522397956193-vmtjd0dahinvcfg3s21aho22169ll9sn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ufg.gleibson.postos",
+            "certificate_hash": "3B01F9A463909D9BB077DF9FB521EDE0781528AF"
+          }
+        },
+        {
+          "client_id": "522397956193-qbe2h32grj7g9t480khq5c4rhs6v6pq0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ufg.gleibson.postos",
+            "certificate_hash": "E1F2D9D6CD90812DD1563D9220BD535D74E02137"
+          }
+        },
+        {
+          "client_id": "522397956193-6q58bph6479fv8cghcujreodmg5i68l4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcZ9-cd4aUfALeklnCJ3Q5_B_fmzesf2A"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "522397956193-6q58bph6479fv8cghcujreodmg5i68l4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
