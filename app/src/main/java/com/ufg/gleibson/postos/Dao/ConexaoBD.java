@@ -14,7 +14,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.ufg.gleibson.postos.Model.Combustivel;
 import com.ufg.gleibson.postos.Model.Posto;
 
 import java.util.ArrayList;
@@ -50,16 +49,6 @@ public class ConexaoBD {
     public void atualizarAtributoPosto(int identify, String atributo) {
         String id = Integer.toString(identify);
         dbr.child(colecao).child(id).child(atributo).setValue(atributo);
-    }
-
-    /**
-     * Atualiza a lista de combustiveis de um posto. Identifica o posto por seu id.
-     * @param identify
-     * @param atributo
-     */
-    public void atualizarCombustivelPosto(int identify, List<Combustivel> atributo) {
-        String id = Integer.toString(identify);
-        dbr.child(colecao).child(id).child("combustiveis").setValue(atributo);
     }
 
     /**
