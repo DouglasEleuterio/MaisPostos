@@ -8,15 +8,13 @@ import java.util.*;
  * Created by gleibson on 19/06/16.
  */
 public class Posto {
-    private int id;
     private String nome;
     private String bandeira;
     private List<Combustivel> combustiveis;
     private int nota;
     private LatLng latLng;
 
-    public Posto(int id, String nome, String bandeira, List<Combustivel> combustiveis, int nota, LatLng latLng) {
-        this.id = id;
+    public Posto(String nome, String bandeira, List<Combustivel> combustiveis, int nota, LatLng latLng) {
         this.nome = nome;
         this.bandeira = bandeira;
         this.combustiveis = combustiveis;
@@ -24,9 +22,6 @@ public class Posto {
         this.latLng = latLng;
     }
 
-    public int getId() {
-        return id;
-    }
 
     public LatLng getLatLng() {
         return latLng;
@@ -34,10 +29,6 @@ public class Posto {
 
     public void setLatLng(LatLng latLng) {
         this.latLng = latLng;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public List<Combustivel> getCombustiveis() {

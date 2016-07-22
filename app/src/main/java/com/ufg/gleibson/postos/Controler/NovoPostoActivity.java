@@ -5,16 +5,41 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 
+import com.ufg.gleibson.postos.Dao.Controle;
+import com.ufg.gleibson.postos.Model.Combustivel;
+import com.ufg.gleibson.postos.Model.Posto;
 import com.ufg.gleibson.postos.R;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class NovoPostoActivity extends AppCompatActivity {
+
+    private Controle controle = new Controle();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_novo_posto);
         initToolbar();
+
+        EditText nome = (EditText) findViewById(R.id.edit_text_nome);
+        EditText bandeira = (EditText) findViewById(R.id.edit_text_bandeira);
+        EditText gas = (EditText) findViewById(R.id.edit_text_gasolina);
+        EditText gasAdit = (EditText) findViewById(R.id.edit_text_gasolina_aditivada);
+        EditText alc = (EditText) findViewById(R.id.edit_text_alcool);
+        EditText alcAdit = (EditText) findViewById(R.id.edit_text_alcool_aditivado);
+        EditText die = (EditText) findViewById(R.id.edit_text_diesel);
+        EditText dieS10 = (EditText) findViewById(R.id.edit_text_diesel_s10);
+
+        List<Combustivel> listaComb = new ArrayList<>();
+
+    }
+
+    private String viewToStr(EditText view){
+        return view.getText().toString();
     }
 
     private void initToolbar() {
@@ -31,7 +56,7 @@ public class NovoPostoActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void salvarPosto(View view){
-
+    public void salvarPosto(View view, Posto posto){
+        controle.incluirNovoPosto(posto);
     }
 }

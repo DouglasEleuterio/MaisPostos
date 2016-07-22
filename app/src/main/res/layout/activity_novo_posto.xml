@@ -35,7 +35,8 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:gravity="center_horizontal"
-            android:padding="16dp">
+            android:padding="16dp"
+            android:layout_marginTop="?actionBarSize">
 
             <EditText
                 android:id="@+id/edit_text_nome"

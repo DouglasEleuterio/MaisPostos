@@ -23,4 +23,8 @@ public class Controle {
         return lista;
     }
 
+    public void incluirNovoPosto(Posto posto){
+        banco.guardarNovoPosto(posto);
+    }
+
 }
