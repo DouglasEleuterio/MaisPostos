@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     tools:context=".Controler.NovoPostoActivity">
@@ -28,138 +27,78 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
+            android:layout_marginTop="?actionBarSize"
             android:gravity="center_horizontal"
-            android:padding="16dp"
-            android:layout_marginTop="?actionBarSize">
+            android:orientation="vertical"
+            android:padding="16dp">
 
             <EditText
                 android:id="@+id/edit_text_nome"
-                android:layout_width="320dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/nome"
                 android:padding="16dp"
                 android:textColor="#009688"
                 android:textColorHint="#80CBC4" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="18dp" />
-
             <EditText
                 android:id="@+id/edit_text_bandeira"
-                android:layout_width="320dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/bandeira"
                 android:padding="16dp"
                 android:textColor="#009688"
                 android:textColorHint="#80CBC4" />
 
-            <LinearLayout
+            <EditText
+                android:id="@+id/edit_text_gasolina"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:padding="16dp">
+                android:hint="@string/gasolina"
+                android:inputType="numberDecimal"
+                android:padding="16dp"
+                android:textColor="#009688"
+                android:textColorHint="#80CBC4" />
 
-                <EditText
-                    android:id="@+id/edit_text_gasolina"
-                    android:layout_width="160dp"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/gasolina"
-                    android:padding="16dp"
-                    android:textColor="#009688"
-                    android:textColorHint="#80CBC4"
-                    android:inputType="numberDecimal"/>
 
-                <EditText
-                    android:id="@+id/edit_text_gasolina_aditivada"
-                    android:layout_width="160dp"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/aditivada"
-                    android:padding="16dp"
-                    android:textColor="#009688"
-                    android:textColorHint="#80CBC4"
-                    android:inputType="numberDecimal"/>
-
-            </LinearLayout>
-
-            <LinearLayout
+            <EditText
+                android:id="@+id/edit_text_alcool"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:padding="16dp">
+                android:hint="@string/alcool"
+                android:inputType="numberDecimal"
+                android:padding="16dp"
+                android:textColor="#009688"
+                android:textColorHint="#80CBC4" />
 
-                <EditText
-                    android:id="@+id/edit_text_alcool"
-                    android:layout_width="160dp"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/alcool"
-                    android:padding="16dp"
-                    android:textColor="#009688"
-                    android:textColorHint="#80CBC4"
-                    android:inputType="numberDecimal"/>
-
-                <EditText
-                    android:id="@+id/edit_text_alcool_aditivado"
-                    android:layout_width="160dp"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/aditivado"
-                    android:padding="16dp"
-                    android:textColor="#009688"
-                    android:textColorHint="#80CBC4"
-                    android:inputType="numberDecimal"/>
-
-            </LinearLayout>
-
-            <LinearLayout
+            <EditText
+                android:id="@+id/edit_text_diesel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:padding="16dp">
-
-                <EditText
-                    android:id="@+id/edit_text_diesel"
-                    android:layout_width="160dp"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/diesel"
-                    android:padding="16dp"
-                    android:textColor="#009688"
-                    android:textColorHint="#80CBC4"
-                    android:inputType="numberDecimal" />
-
-                <EditText
-                    android:id="@+id/edit_text_diesel_s10"
-                    android:layout_width="160dp"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/diesel_s10"
-                    android:padding="16dp"
-                    android:textColor="#009688"
-                    android:textColorHint="#80CBC4"
-                    android:inputType="numberDecimal"/>
-
-            </LinearLayout>
+                android:hint="@string/diesel"
+                android:inputType="numberDecimal"
+                android:padding="16dp"
+                android:textColor="#009688"
+                android:textColorHint="#80CBC4" />
 
             <EditText
                 android:id="@+id/edit_text_atendimento"
-                android:layout_width="140dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/atendimento"
+                android:inputType="number"
                 android:padding="16dp"
                 android:textColor="#009688"
-                android:textColorHint="#80CBC4"
-                android:inputType="number"/>
+                android:textColorHint="#80CBC4" />
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="20dp" />
+                android:layout_height="40dp" />
 
             <Button
                 android:layout_width="300dp"

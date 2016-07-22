@@ -7,6 +7,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -44,15 +45,16 @@ public class InicioActivity extends AppCompatActivity implements OnMapReadyCallb
         googleMap.setOnMapLongClickListener(new GoogleMap.OnMapLongClickListener() {
             @Override
             public void onMapLongClick(LatLng latLng) {
-                novoPosto();
+                novoPosto(latLng);
             }
         });
         googleMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
             @Override
             public void onInfoWindowClick(Marker marker) {
-                posto(googleMap.getCameraPosition());
+                posto(marker.getPosition());
             }
         });
+        googleMap.getUiSettings().setMapToolbarEnabled(false);
 
  /*       for (Posto posto : controle.getListaPosto()) {
             googleMap.addMarker(new MarkerOptions().position(posto.getLatLng())
@@ -67,7 +69,6 @@ public class InicioActivity extends AppCompatActivity implements OnMapReadyCallb
         googleMap.addMarker(new MarkerOptions().position(posto2).title("Posto2").snippet("Nota: 6")
                 .icon(BitmapDescriptorFactory.fromBitmap(initMarker(R.drawable.ic_local_gas_24dp))));
 
-        googleMap.getUiSettings().setMapToolbarEnabled(false);
     }
 
     private Bitmap initMarker(int i) {
@@ -92,14 +93,15 @@ public class InicioActivity extends AppCompatActivity implements OnMapReadyCallb
         setSupportActionBar(toolbar);
     }
 
-    private void novoPosto() {
+    private void novoPosto(LatLng latLng) {
         Intent intent = new Intent(this, NovoPostoActivity.class);
+        intent.putExtra("latlng", latLng.toString());
         startActivity(intent);
     }
 
-    private void posto(CameraPosition cameraPosition) {
+    private void posto(LatLng latLng) {
         Intent intent = new Intent(this, PostoActivity.class);
-        intent.putExtra("coordenadas",cameraPosition.target);
+        intent.putExtra("latlng", latLng.toString());
         startActivity(intent);
     }
 

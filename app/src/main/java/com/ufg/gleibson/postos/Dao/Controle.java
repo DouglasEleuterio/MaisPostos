@@ -26,8 +26,8 @@ public class Controle {
         return lista;
     }
 
-    public Posto getPostoByLatLng(String coordenadas) {
-        return (Posto) banco.buscarPostoByLatLng(coordenadas);
+    public Posto getPostoByLatLng(LatLng latLng) {
+        return (Posto) banco.buscarPostoByLatLng(latLng.toString());
     }
 
     public void incluirNovoPosto(Posto posto){

@@ -10,29 +10,21 @@ import java.util.*;
 public class Posto {
     private String nome;
     private String bandeira;
-    private List<Combustivel> combustiveis;
     private int nota;
     private LatLng latLng;
+    private float gasolina;
+    private float alcool;
+    private float diesel;
 
-    public Posto(String nome, String bandeira, List<Combustivel> combustiveis, int nota, LatLng latLng) {
+    public Posto(String nome, String bandeira, int nota, LatLng latLng, float gasolina,
+                 float alcool, float diesel) {
         this.nome = nome;
         this.bandeira = bandeira;
-        this.combustiveis = combustiveis;
         this.nota = nota;
         this.latLng = latLng;
-    }
-
-
-    public LatLng getLatLng() {
-        return latLng;
-    }
-
-    public void setLatLng(LatLng latLng) {
-        this.latLng = latLng;
-    }
-
-    public List<Combustivel> getCombustiveis() {
-        return combustiveis;
+        this.gasolina = gasolina;
+        this.alcool = alcool;
+        this.diesel = diesel;
     }
 
     public String getNome() {
@@ -51,19 +43,43 @@ public class Posto {
         this.bandeira = bandeira;
     }
 
-    public List<Combustivel> getCombustivel() {
-        return combustiveis;
-    }
-
-    public void setCombustiveis(List<Combustivel> combustiveis) {
-        this.combustiveis = combustiveis;
-    }
-
     public int getNota() {
         return nota;
     }
 
     public void setNota(int nota) {
         this.nota = nota;
+    }
+
+    public LatLng getLatLng() {
+        return latLng;
+    }
+
+    public void setLatLng(LatLng latLng) {
+        this.latLng = latLng;
+    }
+
+    public float getGasolina() {
+        return gasolina;
+    }
+
+    public void setGasolina(float gasolina) {
+        this.gasolina = gasolina;
+    }
+
+    public float getAlcool() {
+        return alcool;
+    }
+
+    public void setAlcool(float alcool) {
+        this.alcool = alcool;
+    }
+
+    public float getDiesel() {
+        return diesel;
+    }
+
+    public void setDiesel(float diesel) {
+        this.diesel = diesel;
     }
 }
