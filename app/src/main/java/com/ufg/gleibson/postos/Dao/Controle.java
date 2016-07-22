@@ -1,10 +1,13 @@
 package com.ufg.gleibson.postos.Dao;
 
+import com.google.android.gms.maps.model.LatLng;
 import com.ufg.gleibson.postos.Dao.ConexaoBD;
 import com.ufg.gleibson.postos.Model.Posto;
 
+import java.lang.annotation.Retention;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Created by gleibson on 15/07/16.
@@ -21,6 +24,10 @@ public class Controle {
             tem = false;
         }
         return lista;
+    }
+
+    public Posto getPostoByLatLng(String coordenadas) {
+        return (Posto) banco.buscarPostoByLatLng(coordenadas);
     }
 
     public void incluirNovoPosto(Posto posto){

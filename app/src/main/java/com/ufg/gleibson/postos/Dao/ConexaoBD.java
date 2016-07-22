@@ -4,6 +4,7 @@ import android.nfc.Tag;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
+import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -15,11 +16,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.ufg.gleibson.postos.Model.Combustivel;
 import com.ufg.gleibson.postos.Model.Posto;
-import com.ufg.gleibson.postos.Model.Usuario;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * Created by gleibson on 17/06/16.
@@ -37,8 +38,7 @@ public class ConexaoBD {
      * @param posto
      */
     public void guardarNovoPosto(Posto posto) {
-        String id = Integer.toString(posto.getId());
-        dbr.child(colecao).child(id).setValue(posto);
+        dbr.child(colecao).child(posto.getLatLng().toString()).setValue(posto);
     }
 
     /**
@@ -80,6 +80,23 @@ public class ConexaoBD {
         String id = Integer.toString(identify);
 //        return  dbr.child(colecao).child(id).equals(Posto.class);
         dbr.child(colecao).child(id).addListenerForSingleValueEvent(
+                new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        Posto posto = dataSnapshot.getValue(Posto.class);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        Log.w("getUser:onCancelled", databaseError.toException());
+                    }
+                }
+        );
+        return dbr;
+    }
+
+    public Object buscarPostoByLatLng(String latLng) {
+        dbr.child(colecao).child(latLng.toString()).addListenerForSingleValueEvent(
                 new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {

@@ -14,6 +14,7 @@ import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -34,7 +35,7 @@ public class InicioActivity extends AppCompatActivity implements OnMapReadyCallb
     }
 
     @Override
-    public void onMapReady(GoogleMap googleMap) {
+    public void onMapReady(final GoogleMap googleMap) {
         LatLng inicial = new LatLng(-16.6808663, -49.2532674);
         int zoomInicial = 15;
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(inicial));
@@ -49,7 +50,7 @@ public class InicioActivity extends AppCompatActivity implements OnMapReadyCallb
         googleMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
             @Override
             public void onInfoWindowClick(Marker marker) {
-                posto();
+                posto(googleMap.getCameraPosition());
             }
         });
 
@@ -96,8 +97,9 @@ public class InicioActivity extends AppCompatActivity implements OnMapReadyCallb
         startActivity(intent);
     }
 
-    private void posto() {
+    private void posto(CameraPosition cameraPosition) {
         Intent intent = new Intent(this, PostoActivity.class);
+        intent.putExtra("coordenadas",cameraPosition.target);
         startActivity(intent);
     }
 
