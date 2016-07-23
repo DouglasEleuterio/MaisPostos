@@ -59,6 +59,7 @@ public class NovoPostoActivity extends AppCompatActivity {
         Posto posto = getDadosPosto();
         Controle controle = new Controle();
         controle.incluirNovoPosto(posto);
+        finish();
     }
 
     private void initToolbar() {
@@ -69,12 +70,17 @@ public class NovoPostoActivity extends AppCompatActivity {
     }
 
     private LatLng stringToLatLng(String position) {
-        String[] ll = position.split(",");
+        String[] ll = removeCaracters(position).split(",");
         double latitude = Double.parseDouble(ll[0]);
         double longitude = Double.parseDouble(ll[1]);
         return new LatLng(latitude, longitude);
     }
 
+
+    private String removeCaracters(String position) {
+        String string =  position.replace("lat/lng: (","");
+        return string.replace(")","");
+    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         finish();

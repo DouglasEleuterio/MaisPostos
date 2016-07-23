@@ -1,27 +1,7 @@
 package com.ufg.gleibson.postos.Dao;
 
-import android.nfc.Tag;
-import android.support.annotation.NonNull;
-import android.util.Log;
-
 import com.firebase.client.Firebase;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.StreetViewPanoramaCamera;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.ufg.gleibson.postos.Model.Posto;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
 
 /**
  * Created by gleibson on 17/06/16.
@@ -32,16 +12,11 @@ public class ConexaoBD {
      */
     private String link = null;
     private Firebase firebase = null;
-    private String colecao = "postos";
+    private String colecaoPosto = "postos";
 
-
-    /* Gleibson
-    public ConexaoBD() {
-        this.link = "https://inner-replica-134523.firebaseio.com/";
-        this.dbr = FirebaseDatabase.getInstance().getReference(link);
-    }  */
-
-    /* Marcos */
+    /**
+     * Cria uma conexão única com o banco de dados.
+     */
     public ConexaoBD() {
         this.link = "https://maispostos.firebaseio.com";
         if (firebase == null) {
@@ -54,7 +29,9 @@ public class ConexaoBD {
      * @param posto
      */
     public void guardarNovoPosto(Posto posto) {
-        firebase.child(colecao).child(posto.getLatLng().toString()).setValue(posto);
+        String id = removeCaracters(posto.getLatLng().toString());
+        Firebase postoDataBase = firebase.child(colecaoPosto).child(id);
+        postoDataBase.setValue(posto);
     }
 
     /**
@@ -64,8 +41,7 @@ public class ConexaoBD {
      * @param atributo
      */
     public void atualizarAtributoPosto(int identify, String atributo, String atualizar) {
-        String id = Integer.toString(identify);
-        firebase = firebase.child(colecao).child(id).child(atributo);
+        firebase = firebase.child(colecaoPosto);
         firebase.setValue(atualizar);
     }
 
@@ -75,7 +51,7 @@ public class ConexaoBD {
      */
     public void excluirPosto(int identify) {
         String id = Integer.toString(identify);
-        firebase = firebase.child(colecao).child(id);
+        firebase = firebase.child(colecaoPosto).child(id);
         firebase.removeValue();
     }
 
@@ -90,5 +66,13 @@ public class ConexaoBD {
 
     public Object buscarPostoByLatLng(String latLng) {
         return null;
+    }
+
+    private String removeCaracters(String position) {
+        String string =  position.replace("lat/lng: (","");
+        string = string.replace(")","");
+        string = string.replace(".","");
+        string = string.replace("-","");
+        return string;
     }
 }
